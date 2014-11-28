@@ -6,20 +6,20 @@
     
     <TextView 
         android:id="@+id/difficulty"
-        android:text="@string/difficulty"
+        android:text="difficulty"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_easy"
-        android:text="@string/btn_easy"
+        android:text="btn_easy"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"/>
     
     <Button 
        android:id="@+id/btn_hard"
-       android:text="@string/btn_hard"
+       android:text="btn_hard"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:onClick="onClick" />

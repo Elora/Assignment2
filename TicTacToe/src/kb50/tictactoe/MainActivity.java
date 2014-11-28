@@ -17,13 +17,13 @@ public class MainActivity extends Activity {
     public void onClick(View v){
     	switch(v.getId()){
     	case R.id.btn_oneplayer:
-    		Intent single = new Intent("kb50.tictactoe.ChooseDifficulty");
+    		Intent single = new Intent(this, Difficulty.class);
     		startActivity(single);
     		break;
     	
     	case R.id.btn_twoplayer:
-    		/*Intent multi = new Intent(this, MultiPlayer.class);
-    		startActivity(multi);*/
+    		Intent multi = new Intent(this, MultiPlayer.class);
+    		startActivity(multi);
     		break;
     		
     	}

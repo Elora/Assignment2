@@ -18,10 +18,13 @@
         
         <ImageButton 
             android:id="@+id/ib_1"
+
              android:layout_weight=".30"
 	        android:layout_height="120dp"
 	         android:layout_width="0dp"
 	         android:src="@drawable/cow4"
+
+
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
