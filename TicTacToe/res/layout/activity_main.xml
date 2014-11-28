@@ -1,12 +1,108 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <ImageButton 
+            android:id="@+id/ib_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <ImageButton 
+            android:id="@+id/ib_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <ImageButton 
+            android:id="@+id/ib_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+        <ImageButton 
+            android:id="@+id/ib_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cow4"
+            android:contentDescription="Button"
+            android:onClick="onClick"/>
+        
+    </LinearLayout>    
+</LinearLayout>
