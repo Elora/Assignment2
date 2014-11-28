@@ -18,25 +18,28 @@
         
         <ImageButton 
             android:id="@+id/ib_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
             android:id="@+id/ib_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
             android:id="@+id/ib_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
@@ -50,25 +53,28 @@
         
         <ImageButton 
             android:id="@+id/ib_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
             android:id="@+id/ib_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
             android:id="@+id/ib_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	        android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
@@ -82,27 +88,50 @@
         
         <ImageButton 
             android:id="@+id/ib_7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	         android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
             android:id="@+id/ib_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cow4"
+             android:layout_weight=".30"
+	         android:layout_height="120dp"
+	         android:layout_width="0dp"
+	         android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
         <ImageButton 
-            android:id="@+id/ib_9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ib_9" 
+            android:layout_weight=".30"
+	        android:layout_height="120dp"
+	        android:layout_width="0dp"
             android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"/>
         
-    </LinearLayout>    
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name" 
+        android:gravity="center"/>
+    	
+    	  <Space
+    	      android:layout_width="fill_parent"
+       			android:layout_height="20dp"
+            	android:layout_gravity="fill"/>
+    	<Button
+    	    android:id="@+id/imageButton10"
+	        android:layout_width="fill_parent"
+       		android:layout_height="wrap_content"
+       		android:text="@string/app_name"
+       		android:onClick="onClick"
+        	android:gravity="center"/>
+    	
+    
 </LinearLayout>
