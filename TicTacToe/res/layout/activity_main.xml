@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    
+    <Button 
+        android:id="@+id/btn_oneplayer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_oneplayer"
+      	android:onClick="onClick"/>
+    
+    
+     <Button
+        android:id="@+id/btn_twoplayer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_twoplayer"
+        android:onClick="onClick"/>
+
+
+</LinearLayout>
+    
