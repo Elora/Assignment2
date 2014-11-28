@@ -19,7 +19,7 @@
             android:label="@string/title_activity_splash"
             android:theme="@style/theme_splash" >
             <intent-filter>
-                <action android:name="kb50.tictactoe.Game" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
