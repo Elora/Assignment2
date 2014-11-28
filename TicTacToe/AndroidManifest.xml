@@ -13,29 +13,37 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
-            android:name=".Game"
-            android:label="@string/app_name" >
+            android:name=".Splash"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/theme_splash" >
             <intent-filter>
                 <action android:name="kb50.tictactoe.Game" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".Difficulty"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="kb50.tictactoe.Difficulty" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-          
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="kb50.tictactoe.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            
-       
-
-
         </activity>
+
         <activity
             android:name=".MultiPlayer"
             android:label="@string/title_activity_multi_player" >
@@ -45,8 +53,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
           
-             </activity>
-             
+        </activity>
+        
+        <activity
+            android:name=".Game"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="kb50.tictactoe.Game" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

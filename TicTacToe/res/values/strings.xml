@@ -18,4 +18,13 @@
     <string name="title_activity_multi_player">MultiPlayer</string>
     <string name="hello_world">Hello world!</string>
 
+    <!-- difficulty -->
+    <string name="difficulty">Choose Difficulty</string>
+    <string name="btn_easy">Easy</string>
+    <string name="btn_hard">Hard</string>
+    <!-- end difficulty -->
+
+    <string name="title_activity_splash">Splash</string>
+
+
 </resources>
