@@ -4,6 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     
+     <TextView 
+        android:text="@string/MP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    
+     
+     <Space
+    	    android:layout_width="fill_parent"
+       		android:layout_height="30dp"
+            android:layout_gravity="fill"/>
+    
     <TextView
         android:id="@+id/label_p1"
         android:layout_width="wrap_content"
@@ -19,18 +30,24 @@
     
     <TextView 
         android:id="@+id/label_p2"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_p2"
         />
     
     <EditText 
         android:id="@+id/input_p2"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/input_p2"
         />
     
+    
+        
+     <Space
+    	    android:layout_width="fill_parent"
+       		android:layout_height="200dp"
+            android:layout_gravity="fill"/>
     
     <Button 
         android:id="@+id/btn_play"
@@ -39,6 +56,10 @@
         android:text="@string/btn_play"
         android:onClick="onClick"
         />
+    
+    
+
+    	
     
     <Button 
         android:id="@+id/btn_back"

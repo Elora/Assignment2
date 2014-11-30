@@ -5,8 +5,7 @@
     <string name="blah">Something</string>
 
     <!-- Buttons -->
-
-    <string name="btn">button</string>
+	<string name="btn">button</string>
     <string name="btn_oneplayer">one player</string>
     <string name="btn_twoplayer">two player</string>
     <string name="btn_play">Play</string>
@@ -15,16 +14,16 @@
     <string name="label_p2">Player 2:</string>
     <string name="input_p1">Player 1</string>
     <string name="input_p2">Player 2</string>
-    <string name="title_activity_multi_player">MultiPlayer</string>
-    <string name="hello_world">Hello world!</string>
-
-    <!-- difficulty -->
-    <string name="difficulty">Choose Difficulty</string>
     <string name="btn_easy">Easy</string>
     <string name="btn_hard">Hard</string>
-    <!-- end difficulty -->
-
-    <string name="title_activity_splash">Splash</string>
-
+    <string name="hello_world">Hello world!</string>
+    <string name="TG">The game</string>
+    <string name="MM">Main menu</string>
+    <string name="MP">Multiplayer</string>
+    <string name="turn">Your turn or other displayed here</string>
+    <string name="score">the score here</string>
+    
+    
+    <string name="difficulty">Choose Difficulty</string>
 
 </resources>

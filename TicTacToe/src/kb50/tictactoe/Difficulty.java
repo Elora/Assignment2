@@ -22,6 +22,10 @@ public class Difficulty extends Activity{
 			Intent j = new Intent (this, Game.class);
 			startActivity(j);
 			break;
+		case R.id.btn_back:
+			Intent k = new Intent (this, MainActivity.class);
+			startActivity(k);
+			break;
 		}
 	}
 
