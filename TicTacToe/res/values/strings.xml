@@ -21,7 +21,7 @@
     <string name="MM">Main menu</string>
     <string name="MP">Multiplayer</string>
     <string name="turn">Your turn or other displayed here</string>
-    <string name="score">the score here</string>
+    <string name="score">0:0</string>
     
     
     <string name="difficulty">Choose Difficulty</string>
