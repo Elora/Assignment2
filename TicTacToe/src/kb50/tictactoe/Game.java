@@ -407,7 +407,7 @@ public class Game extends Activity {
     private void onePlayer(){
     	if(turn == true){
         	TextView t1 = (TextView) findViewById(R.id.turn);
-        	t1.setText("It is Your turn");
+        	//t1.setText("It is Your turn");
     	}else{
     		//computer action
     	}
@@ -417,10 +417,10 @@ public class Game extends Activity {
     private void twoPlayers(){    	
     	if(turn == true){
         	TextView t1 = (TextView) findViewById(R.id.turn);
-        	t1.setText("It is "+Player1+" 's turn");
+        	t1.setText("It is "+Player2+" 's turn");
     	}else{
         	TextView t1 = (TextView) findViewById(R.id.turn);
-        	t1.setText("It is "+Player2+" 's turn");
+        	t1.setText("It is "+Player1+" 's turn");
     	}
     } 
 }
