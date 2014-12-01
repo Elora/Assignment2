@@ -34,19 +34,20 @@ public class Game extends Activity {
     		ImageButton btn = (ImageButton) findViewById(v.getId());
         	
         	Resources res = getResources();
-        	Drawable cow2 = res.getDrawable(R.drawable.cow2);
-        	Drawable cow3 = res.getDrawable(R.drawable.cow3);
+        	Drawable cross = res.getDrawable(R.drawable.candycane);
+        	Drawable circle = res.getDrawable(R.drawable.cookie);
         	
         	if(turn == true){
-        		btn.setImageDrawable(cow2);
+        		btn.setImageDrawable(cross);
         		btn.setClickable(false);
         		turn = false;
         	}else{
-        		btn.setImageDrawable(cow3);
+        		btn.setImageDrawable(circle);
         		btn.setClickable(false);
         		turn = true;
         	}
         	break;
+
     	}
     }
 }

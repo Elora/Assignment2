@@ -25,7 +25,7 @@ public class MultiPlayer extends Activity {
 	public void onClick(View v){
 		switch(v.getId()){
 		case R.id.btn_play:
-			Intent play = new Intent("kb50.tictactoe.Game");
+			Intent play = new Intent(this, Game.class);
 			
 			/*
 			String nameP1 = inputP1.getText().toString(); 

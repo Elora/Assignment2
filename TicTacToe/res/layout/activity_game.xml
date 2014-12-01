@@ -9,130 +9,136 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/TG" />
-    
-    <LinearLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        
-        <ImageButton 
-            android:id="@+id/ib_1"
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        <ImageButton 
-            android:id="@+id/ib_2"
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cockie"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        <ImageButton 
-            android:id="@+id/ib_3"
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        </LinearLayout>
 
-    <LinearLayout 
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        
-        <ImageButton 
-        	android:id="@+id/ib_4"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/ib_1"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        <ImageButton 
-            android:id="@+id/ib_5"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_2"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        <ImageButton 
-            android:id="@+id/ib_6"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_3"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        </LinearLayout>
-    
-    <LinearLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        
-        <ImageButton 
-            android:id="@+id/ib_7"
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        
-        <ImageButton 
-            android:id="@+id/ib_8"
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-	        android:src="@drawable/cow4"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
-        <ImageButton 
-            android:id="@+id/ib_9" 
-            android:layout_weight=".30"
-	        android:layout_height="120dp"
-	        android:layout_width="0dp"
-            android:src="@drawable/cow4"
-            android:contentDescription="@string/btn"
-            android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
     </LinearLayout>
-    
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/ib_4"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_5"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_6"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/ib_7"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_8"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+
+        <ImageButton
+            android:id="@+id/ib_9"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight=".30"
+            android:contentDescription="@string/btn"
+            android:onClick="onClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/cow4" />
+    </LinearLayout>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/turn" 
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/turn" />
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/score" 
-        android:gravity="center"/>
-    	
-    	<Button
-    	    android:id="@+id/btn_back"
-	        android:layout_width="fill_parent"
-       		android:layout_height="wrap_content"
-       		android:text="@string/btn_back"
-       		android:onClick="onClick"
-        	android:gravity="center"/>
-    	
+        android:gravity="center"
+        android:text="@string/score" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="@string/btn_back" />
+
 </LinearLayout>
