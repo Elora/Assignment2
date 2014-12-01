@@ -15,7 +15,10 @@ public class Difficulty extends Activity{
 	public void onClick(View v){
 		switch(v.getId()){
 		case R.id.btn_easy:
+
 			Intent i = new Intent (this, Game.class);
+
+			i.putExtra("Player", "one");
 			startActivity(i);
 			break;
 		case R.id.btn_hard:

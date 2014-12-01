@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/LightGrey">
+    android:background="@drawable/background">
     	
     <TextView
         android:layout_width="wrap_content"
@@ -134,12 +134,14 @@
 
     
     <TextView
+        android:id="@+id/turn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/turn" />
 
     <TextView
+        android:id="@+id/score"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
