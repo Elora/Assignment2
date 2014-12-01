@@ -1,6 +1,5 @@
 package kb50.tictactoe;
 
-import kb50.tictactoe.Difficulty;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

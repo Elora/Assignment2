@@ -19,7 +19,7 @@ public class MultiPlayer extends Activity {
 		setContentView(R.layout.activity_multiplayer);
 	
 		inputP1 = (EditText) findViewById(R.id.input_p1);
-		inputP2 = (EditText)	findViewById(R.id.input_p2);
+		inputP2 = (EditText) findViewById(R.id.input_p2);
 	}
 	
 	public void onClick(View v){

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:background="@color/LightGrey">
     	
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +24,9 @@
          	android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            />
 
         <ImageButton
             android:id="@+id/ib_2"
@@ -34,7 +36,9 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            />
 
         <ImageButton
             android:id="@+id/ib_3"
@@ -44,7 +48,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:layout_margin="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +66,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"/>
 
         <ImageButton
             android:id="@+id/ib_5"
@@ -71,7 +77,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"/>
 
         <ImageButton
             android:id="@+id/ib_6"
@@ -81,7 +88,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -98,7 +106,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:layout_margin="5dp" />
 
         <ImageButton
             android:id="@+id/ib_8"
@@ -108,7 +117,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"/>
         
         <ImageButton
             android:id="@+id/ib_9"
@@ -118,7 +128,8 @@
             android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     
