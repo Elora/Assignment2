@@ -3,8 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="${relativePackage}.${activityClass}" >
-
+    android:background="@drawable/background">
+    	
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,30 +21,30 @@
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+         	android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@+id/ib_2"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@+id/ib_3"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,30 +58,30 @@
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@+id/ib_5"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@+id/ib_6"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
     </LinearLayout>
 
     <LinearLayout
@@ -95,32 +95,33 @@
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_8"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
-
+            android:scaleType="fitXY"/>
+        
         <ImageButton
             android:id="@+id/ib_9"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight=".30"
+            android:background="@android:color/white"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/cow4" />
+            android:scaleType="fitXY"/>
     </LinearLayout>
 
+    
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -140,5 +141,5 @@
         android:gravity="center"
         android:onClick="onClick"
         android:text="@string/btn_back" />
-
+    	
 </LinearLayout>

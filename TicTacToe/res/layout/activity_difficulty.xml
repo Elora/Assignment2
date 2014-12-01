@@ -32,8 +32,8 @@
     	    android:id="@+id/btn_back"
 	        android:layout_width="fill_parent"
        		android:layout_height="wrap_content"
-       		android:text="@string/app_name"
-       		android:onClick="onClick"
+       		android:text="@string/btn_back"
+     		android:onClick="onClick"
         	android:gravity="center"/>
     	
 </LinearLayout>
