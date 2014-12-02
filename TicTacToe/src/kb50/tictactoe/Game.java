@@ -521,6 +521,38 @@ public class Game extends Activity {
 		}
 	}
 
+	private void clearscreen(){
+		btn1.setImageDrawable(null);
+		btn1.setTag(null);
+		btn1.setClickable(true);
+		btn2.setImageDrawable(null);
+		btn2.setTag(null);
+		btn2.setClickable(true);
+		btn3.setImageDrawable(null);
+		btn3.setTag(null);
+		btn3.setClickable(true);
+		btn4.setImageDrawable(null);
+		btn4.setTag(null);
+		btn4.setClickable(true);
+		btn5.setImageDrawable(null);
+		btn5.setTag(null);
+		btn5.setClickable(true);
+		btn6.setImageDrawable(null);
+		btn6.setTag(null);
+		btn6.setClickable(true);
+		btn7.setImageDrawable(null);
+		btn7.setTag(null);
+		btn7.setClickable(true);
+		btn8.setImageDrawable(null);
+		btn8.setTag(null);
+		btn8.setClickable(true);
+		btn9.setImageDrawable(null);
+		btn9.setTag(null);
+		btn9.setClickable(true);
+		
+		
+	}
+	
 	private void onePlayer() {
 		if (turn == true) {
 			TextView t1 = (TextView) findViewById(R.id.turn);
