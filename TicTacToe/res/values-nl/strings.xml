@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Boter, Kaas En Eieren</string>
+    <string name="blah">Iets</string>
+
+    <!-- Buttons -->
+    <string name="btn">Butten</string>
+    <string name="btn_oneplayer">Een speler</string>
+    <string name="btn_twoplayer">Twee spelers</string>
+    <string name="btn_play">Start</string>
+    <string name="btn_back">Terug</string>
+    <string name="label_p1">Speler 1:</string>
+    <string name="label_p2">Speler 2:</string>
+    <string name="input_p1">Speler 1</string>
+    <string name="input_p2">Speler 2</string>
+    <string name="btn_easy">Makkelijk</string>
+    <string name="btn_hard">Moeilijk</string>
+    <string name="hello_world">Hallo wereld!</string>
+    <string name="TG">Het spel</string>
+    <string name="MM">Hoofdmenu</string>
+    <string name="MP">Multiplayer</string>
+    <string name="turn">You score is hier te zien</string>
+    <string name="score">0:0</string>
+    <string name="difficulty">Kies moeilijkheid</string>
+
+</resources>

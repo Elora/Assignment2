@@ -5,9 +5,9 @@
     <string name="blah">Something</string>
 
     <!-- Buttons -->
-    <string name="btn">button</string>
-    <string name="btn_oneplayer">one player</string>
-    <string name="btn_twoplayer">two player</string>
+    <string name="btn">Button</string>
+    <string name="btn_oneplayer">One player</string>
+    <string name="btn_twoplayer">Two player</string>
     <string name="btn_play">Play</string>
     <string name="btn_back">Back</string>
     <string name="label_p1">Player 1:</string>
@@ -22,6 +22,6 @@
     <string name="MP">Multiplayer</string>
     <string name="turn">Your turn or other displayed here</string>
     <string name="score">0:0</string>
-    <string name="difficulty">Choose Difficulty</string>
+    <string name="difficulty">Choose difficulty</string>
 
 </resources>
