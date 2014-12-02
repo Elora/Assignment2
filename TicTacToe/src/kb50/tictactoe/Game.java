@@ -734,26 +734,26 @@ public class Game extends Activity {
     }
     
     private void drawDialog(){
-    	Fragment dialogFragment = Fragment.newInstance("It's a draw! Want to play again?");
+    	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.drawDialog));
 		dialogFragment.show(getFragmentManager(), "dialog"); 
     }
     
-    private void loseDialog(){
+    private void loseDialog(){    	
     	if(multiplayer == false){
-        	Fragment dialogFragment = Fragment.newInstance("You've lost and now Santa is sad! Want to try to cheer him up?");
+        	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.loseDialog));
     		dialogFragment.show(getFragmentManager(), "dialog");    		
     	}else{
-        	Fragment dialogFragment = Fragment.newInstance(player2 + " wins! Want to play again?");
+        	Fragment dialogFragment = Fragment.newInstance(player2 + " " + res.getString(R.string.multplayerWin));
     		dialogFragment.show(getFragmentManager(), "dialog");    		
     	}
     }
     
     private void winDialog(){
     	if(multiplayer == false){
-        	Fragment dialogFragment = Fragment.newInstance("You've won and Santa is very pleased. Care to play again?");
+        	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.winDialog));
     		dialogFragment.show(getFragmentManager(), "dialog");
     	}else{
-    		Fragment dialogFragment = Fragment.newInstance(player1 + " wins! Want to play again?");
+    		Fragment dialogFragment = Fragment.newInstance(player1 + " " + res.getString(R.string.multplayerWin));
     		dialogFragment.show(getFragmentManager(), "dialog");
     	}
     }

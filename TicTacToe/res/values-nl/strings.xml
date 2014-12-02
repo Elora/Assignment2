@@ -5,7 +5,7 @@
     <string name="blah">Iets</string>
 
     <!-- Buttons -->
-    <string name="btn">Butten</string>
+    <string name="btn">Knop</string>
     <string name="btn_oneplayer">Een speler</string>
     <string name="btn_twoplayer">Twee spelers</string>
     <string name="btn_play">Start</string>
@@ -20,8 +20,13 @@
     <string name="TG">Het spel</string>
     <string name="MM">Hoofdmenu</string>
     <string name="MP">Multiplayer</string>
-    <string name="turn">You score is hier te zien</string>
+    <string name="turn">Jou score is hier te zien</string>
     <string name="score">0:0</string>
     <string name="difficulty">Kies moeilijkheid</string>
+    
+    <string name="winDialog">Je hebt gewonnen en de kerstman is erg blij! Nog een keer?</string>
+   	<string name="loseDialog">Je hebt verloren en de kerstman is erg verdrietig. Nog een keer?</string>
+   	<string name="multplayerWin">wint! Willen jullie nog een keer spelen?</string>
+   	<string name="drawDialog">Gelijkspel! Wil je nog een keer spelen?</string>
 
 </resources>

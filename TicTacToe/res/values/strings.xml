@@ -23,5 +23,10 @@
     <string name="turn">Your turn or other displayed here</string>
     <string name="score">0:0</string>
     <string name="difficulty">Choose difficulty</string>
+    
+   	<string name="winDialog">You\'ve won and Santa is very pleased. Care to play again?</string>
+   	<string name="loseDialog">You\'ve lost and now Santa is sad! Want to try to cheer him up?</string>
+   	<string name="multplayerWin">wins! Want to play again?</string>
+   	<string name="drawDialog">It\'s a draw! Want to play again?</string>
 
 </resources>
