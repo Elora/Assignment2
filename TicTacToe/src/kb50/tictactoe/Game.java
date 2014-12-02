@@ -1,7 +1,6 @@
 package kb50.tictactoe;
 
 import java.util.Random;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +30,7 @@ public class Game extends Activity {
 	private String Player1;
 	private String Player2;	
 	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +51,126 @@ public class Game extends Activity {
         setBaseVar();
     }
 
+	@Override
+	protected void onSaveInstanceState(Bundle outState){
+		//example = save value
+		int sbValue = 1;
+		
+		outState.putInt("testKey", sbValue); 
+		outState.putBoolean("turn", turn); 		
+		
+		outState.putBoolean("mul", multiplayer); 
+		outState.putString("p1", Player1); 
+		outState.putString("p2", Player2);
+		
+		Object d1 = btn1.getTag();
+    	Object d2 = btn2.getTag();
+    	Object d3 = btn3.getTag();
+    	Object d4 = btn4.getTag();
+    	Object d5 = btn5.getTag();
+    	Object d6 = btn6.getTag();
+    	Object d7 = btn7.getTag();
+    	Object d8 = btn8.getTag();
+    	Object d9 = btn9.getTag();
+    	String[] a= new String[9];
+    	
+		if(d1!=null){
+			a[0] = d1.toString();
+		}
+		if(d2!=null){
+			a[1] = d2.toString();
+		}
+		if(d3!=null){
+			a[2] = d3.toString();
+		}
+		if(d4!=null){
+			a[3] = d4.toString();
+		}
+		if(d5!=null){
+			a[4] = d5.toString();
+		}
+		if(d6!=null){
+			a[5] = d6.toString();
+		}
+		if(d7!=null){
+			a[6] = d7.toString();
+		}
+		if(d8!=null){
+			a[7] = d8.toString();
+		}
+		if(d9!=null){
+			a[8] = d9.toString();
+		}
+		
+    	
+    	outState.putStringArray("a", a);
+		 
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+
+		//example
+		super.onRestoreInstanceState(savedInstanceState);
+		//restore the values in demo
+		int i = (int) savedInstanceState.getInt("testKey");
+		
+		turn = savedInstanceState.getBoolean("turn"); //example key
+		multiplayer = savedInstanceState.getBoolean("mul");
+		Player1 = savedInstanceState.getString("p1");
+		Player2 = savedInstanceState.getString("p2");
+		
+		String[] a = new String[9];
+		a=savedInstanceState.getStringArray("a");
+		if(a[0]!= null){
+			returnButtons(a[0], btn1);
+		}
+		if(a[1]!= null){
+				returnButtons(a[1], btn2);
+		}
+		if(a[2]!= null){
+			returnButtons(a[2], btn3);
+		}
+		if(a[3]!= null){
+			returnButtons(a[3], btn4);
+		}
+		if(a[4]!= null){
+			returnButtons(a[4], btn5);
+		}
+		if(a[5]!= null){
+			returnButtons(a[5], btn6);
+		}
+		if(a[6]!= null){
+			returnButtons(a[6], btn7);
+		}
+		if(a[7]!= null){
+			returnButtons(a[7], btn8);
+		}
+		if(a[8]!= null){
+			returnButtons(a[8], btn9);
+		}
+		 	 
+		
+	}
     
-    private void setBaseVar(){
+    
+    private void returnButtons(String a, ImageButton btn) {
+    	if (a.equals("cross")){
+	 		 btn.setImageDrawable(cross);
+   		btn.setTag("cross");
+   		btn.setClickable(false);
+		 }
+		 else if (a.equals("circle")){
+			 btn.setImageDrawable(circle);
+			 btn.setTag("circle");
+       	 btn.setClickable(false);
+       }
+		 else{}
+	 
+	}
+
+	private void setBaseVar(){
     	try{
     		String a = getIntent().getStringExtra("Player");
     		if (a.equals("two")){
@@ -422,5 +540,8 @@ public class Game extends Activity {
         	TextView t1 = (TextView) findViewById(R.id.turn);
         	t1.setText("It is "+Player1+" 's turn");
     	}
-    } 
+    }
+    private Drawable getImage2(ImageButton a){
+    	return a.getDrawable();
+    }
 }

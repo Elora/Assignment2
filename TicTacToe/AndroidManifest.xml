@@ -17,7 +17,8 @@
         <activity
             android:name=".Splash"
             android:label="@string/app_name"
-            android:theme="@style/theme_splash" >
+            android:theme="@style/theme_splash" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
