@@ -22,6 +22,7 @@ import java.util.Random;
 public class Game extends Activity {
 	private boolean turn;
 	private boolean difEasy;
+	private boolean gamedone;
 	private ImageButton btn1;
 	private ImageButton btn2;
 	private ImageButton btn3;
@@ -60,6 +61,7 @@ public class Game extends Activity {
 		circle = res.getDrawable(R.drawable.cookie);
 		turn = true;
 		setBaseVar();
+		gamedone = false;
 	}
 
 	@Override
@@ -417,10 +419,13 @@ public class Game extends Activity {
 
 	private void multiplayerCheck() {
 		if (multiplayer == false) {
-			turn = false;
-			onePlayer();
-			check();
-			turn = true;
+			if (!gamedone) {
+
+				turn = false;
+				onePlayer();
+				check();
+				turn = true;
+			}
 		} else {
 			twoPlayers();
 			if (turn == true) {
@@ -429,6 +434,7 @@ public class Game extends Activity {
 				turn = true;
 			}
 		}
+
 	}
 
 	private void clearScreen() {
@@ -459,7 +465,7 @@ public class Game extends Activity {
 		btn9.setImageDrawable(null);
 		btn9.setTag(null);
 		btn9.setClickable(true);
-
+		gamedone = false;
 		if (multiplayer == false) {
 			turn = true;
 		}
@@ -528,7 +534,7 @@ public class Game extends Activity {
 		Ai ai = new Ai(a, true);
 		int moveAi = ai.move();
 		setAiButton(moveAi);
-		
+
 	}
 
 	private void setAiButton(int move) {
@@ -645,6 +651,7 @@ public class Game extends Activity {
 		} else {
 			loseDialog();
 		}
+		gamedone = true;
 	}
 
 	private void check() {
@@ -712,102 +719,91 @@ public class Game extends Activity {
 		if (a[0].equals(cr) && a[1].equals(cr) && a[2].equals(cr)) {
 
 			dia();
-		}
-		else if (a[3].equals(cr) && a[4].equals(cr) && a[5].equals(cr)) {
+		} else if (a[3].equals(cr) && a[4].equals(cr) && a[5].equals(cr)) {
 			dia();
-		}
-		else if (a[6].equals(cr) && a[7].equals(cr) && a[8].equals(cr)) {
+		} else if (a[6].equals(cr) && a[7].equals(cr) && a[8].equals(cr)) {
 			dia();
-		}
-		else if (a[0].equals(ci) && a[1].equals(ci) && a[2].equals(ci)) {
+		} else if (a[0].equals(ci) && a[1].equals(ci) && a[2].equals(ci)) {
 			dia();
-		}
-		else if (a[3].equals(ci) && a[4].equals(ci) && a[5].equals(ci)) {
+		} else if (a[3].equals(ci) && a[4].equals(ci) && a[5].equals(ci)) {
 			dia();
-		}
-		else if (a[6].equals(ci) && a[7].equals(ci) && a[8].equals(ci)) {
+		} else if (a[6].equals(ci) && a[7].equals(ci) && a[8].equals(ci)) {
 			dia();
 		}
 
 		// ver
 		else if (a[0].equals(cr) && a[3].equals(cr) && a[6].equals(cr)) {
 			dia();
-		}
-		else if (a[1].equals(cr) && a[4].equals(cr) && a[7].equals(cr)) {
+		} else if (a[1].equals(cr) && a[4].equals(cr) && a[7].equals(cr)) {
 			dia();
-		}
-		else if (a[2].equals(cr) && a[5].equals(cr) && a[8].equals(cr)) {
+		} else if (a[2].equals(cr) && a[5].equals(cr) && a[8].equals(cr)) {
 			dia();
-		}
-		else if (a[0].equals(ci) && a[3].equals(ci) && a[6].equals(ci)) {
+		} else if (a[0].equals(ci) && a[3].equals(ci) && a[6].equals(ci)) {
 			dia();
-		}
-		else if (a[1].equals(ci) && a[4].equals(ci) && a[7].equals(ci)) {
+		} else if (a[1].equals(ci) && a[4].equals(ci) && a[7].equals(ci)) {
 			dia();
-		}
-		else if (a[2].equals(ci) && a[5].equals(ci) && a[8].equals(ci)) {
+		} else if (a[2].equals(ci) && a[5].equals(ci) && a[8].equals(ci)) {
 			dia();
 		}
 
 		// dia
 		else if (a[0].equals(cr) && a[4].equals(cr) && a[8].equals(cr)) {
 			dia();
-		}
-		else if (a[2].equals(cr) && a[4].equals(cr) && a[6].equals(cr)) {
+		} else if (a[2].equals(cr) && a[4].equals(cr) && a[6].equals(cr)) {
 			dia();
-		}
-		else if (a[0].equals(ci) && a[4].equals(ci) && a[8].equals(ci)) {
+		} else if (a[0].equals(ci) && a[4].equals(ci) && a[8].equals(ci)) {
 			dia();
-		}
-		else if (a[2].equals(ci) && a[4].equals(ci) && a[6].equals(ci)) {
+		} else if (a[2].equals(ci) && a[4].equals(ci) && a[6].equals(ci)) {
 			dia();
 		}
 
-		else if(!a[0].equals("") && !a[1].equals("") && !a[2].equals("") && !a[3].equals("") && !a[4].equals("") && !a[5].equals("") && !a[6].equals("") && !a[7].equals("") && !a[8].equals("")){
+		else if (!a[0].equals("") && !a[1].equals("") && !a[2].equals("")
+				&& !a[3].equals("") && !a[4].equals("") && !a[5].equals("")
+				&& !a[6].equals("") && !a[7].equals("") && !a[8].equals("")) {
 			drawDialog();
-		}}
-		
-   
-    
-    
-    private void drawDialog(){
-    	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.drawDialog));
-		dialogFragment.show(getFragmentManager(), "dialog"); 
-    }
-    
-    private void loseDialog(){    	
-    	if(multiplayer == false){
-        	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.loseDialog));
-    		dialogFragment.show(getFragmentManager(), "dialog");    		
-    	}else{
-        	Fragment dialogFragment = Fragment.newInstance(player2 + " " + res.getString(R.string.multplayerWin));
-    		dialogFragment.show(getFragmentManager(), "dialog");    		
-    	}
-    }
-    
-    public void doPositiveClick(){
-    	clearScreen();
-    }
-    
-    public void doNegativeClick(){
-    	Intent intent = new Intent(this, MainActivity.class);
-    	startActivity(intent);
-    }
-    
-   
-	
-	
-	private void winDialog() {
+		}
+	}
+
+	private void drawDialog() {
+		Fragment dialogFragment = Fragment.newInstance(res
+				.getString(R.string.drawDialog));
+		dialogFragment.show(getFragmentManager(), "dialog");
+		gamedone = true;
+	}
+
+	private void loseDialog() {
 		if (multiplayer == false) {
-			Fragment dialogFragment = Fragment
-					.newInstance("You've won and Santa is very pleased. Care to play again?");
+			Fragment dialogFragment = Fragment.newInstance(res
+					.getString(R.string.loseDialog));
 			dialogFragment.show(getFragmentManager(), "dialog");
 		} else {
-			Fragment dialogFragment = Fragment.newInstance(player1
-					+ " wins! Want to play again?");
+			Fragment dialogFragment = Fragment.newInstance(player2 + " "
+					+ res.getString(R.string.multplayerWin));
 			dialogFragment.show(getFragmentManager(), "dialog");
 		}
 	}
+
+	private void winDialog() {
+		if (multiplayer == false) {
+			Fragment dialogFragment = Fragment.newInstance(res
+					.getString(R.string.winDialog));
+			dialogFragment.show(getFragmentManager(), "dialog");
+		} else {
+			Fragment dialogFragment = Fragment.newInstance(player1 + " "
+					+ res.getString(R.string.multplayerWin));
+			dialogFragment.show(getFragmentManager(), "dialog");
+		}
+	}
+
+	public void doPositiveClick() {
+		clearScreen();
+	}
+
+	public void doNegativeClick() {
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+	}
+
 	private Drawable getImage2(ImageButton a) {
 
 		return a.getDrawable();
