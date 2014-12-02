@@ -44,7 +44,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="italic" 
-                android:clickable="False"
                 />
 
             <ImageButton

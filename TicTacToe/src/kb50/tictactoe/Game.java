@@ -37,10 +37,6 @@ public class Game extends Activity {
 	private boolean multiplayer;
 	
 	ImageButton[] btns;
-
-
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,8 +71,6 @@ public class Game extends Activity {
 		outState.putBoolean("mul", multiplayer);
 		outState.putString("p1", player1);
 		outState.putString("p2", player2);
-		
-
 
 		Object d1 = btn1.getTag();
 		Object d2 = btn2.getTag();
@@ -137,8 +131,6 @@ public class Game extends Activity {
 
 		player1 = savedInstanceState.getString("p1");
 		player2 = savedInstanceState.getString("p2");
-	
-	
 
 		String[] a = new String[9];
 		a = savedInstanceState.getStringArray("a");
@@ -221,7 +213,7 @@ public class Game extends Activity {
 				if (dif.equals("easy")) {
 					difEasy = true;
 				} else {
-					difEasy = true;
+					difEasy = false;
 				}
 				turn = true;
 				multiplayer = false;
@@ -236,25 +228,188 @@ public class Game extends Activity {
 
 	}
 
-    public void onClickBtn(View v){
-    	Intent k = new Intent (this, MainActivity.class);
+	public void onClickBtn(View v) {
+		Intent k = new Intent(this, MainActivity.class);
 		startActivity(k);
 	}
 
 
 
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_back:
+			Intent k = new Intent(this, MainActivity.class);
+			startActivity(k);
+			break;
+		case R.id.ib_1:
+			if (turn == true) {
+				btn1.setImageDrawable(cross);
 
-	private void onePlayer() {
-		if (turn == true) {
-			TextView t1 = (TextView) findViewById(R.id.turn);
-			// t1.setText("It is Your turn");
-		} else {
-			aiEasy(btns);
+				btn1.setTag("cross");
 
-			check();
+				btn1.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn1.setImageDrawable(circle);
 
-			turn = true;
+				btn1.setTag("circle");
 
+				btn1.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_2:
+			if (turn == true) {
+				btn2.setImageDrawable(cross);
+
+				btn2.setTag("cross");
+
+				btn2.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn2.setImageDrawable(circle);
+
+				btn2.setTag("circle");
+
+				btn2.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_3:
+			if (turn == true) {
+				btn3.setImageDrawable(cross);
+
+				btn3.setTag("cross");
+
+				btn3.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn3.setImageDrawable(circle);
+
+				btn3.setTag("circle");
+
+				btn3.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_4:
+			if (turn == true) {
+				btn4.setImageDrawable(cross);
+
+				btn4.setTag("cross");
+
+				btn4.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn4.setImageDrawable(circle);
+
+				btn4.setTag("circle");
+
+				btn4.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_5:
+			if (turn == true) {
+				btn5.setImageDrawable(cross);
+
+				btn5.setTag("cross");
+
+				btn5.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn5.setImageDrawable(circle);
+
+				btn5.setTag("circle");
+
+				btn5.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_6:
+			if (turn == true) {
+				btn6.setImageDrawable(cross);
+
+				btn6.setTag("cross");
+
+				btn6.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn6.setImageDrawable(circle);
+
+				btn6.setTag("circle");
+
+				btn6.setClickable(false);
+				check();
+				multiplayerCheck();
+
+			}
+			break;
+		case R.id.ib_7:
+			if (turn == true) {
+				btn7.setImageDrawable(cross);
+
+				btn7.setTag("cross");
+
+				btn7.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn7.setImageDrawable(circle);
+
+				btn7.setTag("circle");
+
+				btn7.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_8:
+			if (turn == true) {
+				btn8.setImageDrawable(cross);
+
+				btn8.setTag("cross");
+
+				btn8.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn8.setImageDrawable(circle);
+
+				btn8.setTag("circle");
+
+				btn8.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
+		case R.id.ib_9:
+			if (turn == true) {
+				btn9.setImageDrawable(cross);
+
+				btn9.setTag("cross");
+
+				btn9.setClickable(false);
+				check();
+				multiplayerCheck();
+			} else {
+				btn9.setImageDrawable(circle);
+				btn9.setClickable(false);
+				check();
+				multiplayerCheck();
+			}
+			break;
 		}
 
 	}
@@ -265,10 +420,17 @@ public class Game extends Activity {
 			onePlayer();
 		} else {
 			twoPlayers();
+			if (turn==true){
+				turn=false;
+		
+			}
+			else{
+				turn =true;
+			}
 		}
 	}
 
-	private void clearScreen(){
+	private void clearScreen() {
 		btn1.setImageDrawable(null);
 		btn1.setTag(null);
 		btn1.setClickable(true);
@@ -296,10 +458,191 @@ public class Game extends Activity {
 		btn9.setImageDrawable(null);
 		btn9.setTag(null);
 		btn9.setClickable(true);
-		
-		
+
 	}
 
+	private void onePlayer() {
+		if (difEasy == true) {
+			aiEasy(btns);
+			} 
+		else {
+			turn=false;
+			aiMedium();
+			check();
+			turn=true;
+			
+		}
+
+	}
+
+
+	private void twoPlayers() {
+		if (turn == true) {
+			TextView t1 = (TextView) findViewById(R.id.turn);
+			t1.setText("It is " + player2 + " 's turn");
+		} else {
+			TextView t1 = (TextView) findViewById(R.id.turn);
+			t1.setText("It is " + player1 + " 's turn");
+		}
+	}
+
+
+	private void aiMedium() {
+
+		Object d1 = btn1.getTag();
+		Object d2 = btn2.getTag();
+		Object d3 = btn3.getTag();
+		Object d4 = btn4.getTag();
+		Object d5 = btn5.getTag();
+		Object d6 = btn6.getTag();
+		Object d7 = btn7.getTag();
+		Object d8 = btn8.getTag();
+		Object d9 = btn9.getTag();
+		String[] a = new String[9];
+
+		if (d1 != null) {
+			a[0] = d1.toString();
+		}
+		if (d2 != null) {
+			a[1] = d2.toString();
+		}
+		if (d3 != null) {
+			a[2] = d3.toString();
+		}
+		if (d4 != null) {
+			a[3] = d4.toString();
+		}
+		if (d5 != null) {
+			a[4] = d5.toString();
+		}
+		if (d6 != null) {
+			a[5] = d6.toString();
+		}
+		if (d7 != null) {
+			a[6] = d7.toString();
+		}
+		if (d8 != null) {
+			a[7] = d8.toString();
+		}
+		if (d9 != null) {
+			a[8] = d9.toString();
+		}
+
+		Ai ai = new Ai(a, true);
+		int moveAi = ai.move();
+		setAiButton(moveAi);
+		
+	}
+	
+	private void setAiButton(int move){
+		switch (move) {
+		case 0:
+			btn1.setImageDrawable(circle);
+			btn1.setTag("circle");
+			btn1.setClickable(false);
+			break;
+		case 1:
+			btn2.setImageDrawable(circle);
+			btn2.setTag("circle");
+			btn2.setClickable(false);
+			
+			break;
+		case 2:
+			btn3.setImageDrawable(circle);
+			btn3.setTag("circle");
+			btn3.setClickable(false);
+			
+			break;
+		case 3:
+			btn4.setImageDrawable(circle);
+			btn4.setTag("circle");
+			btn4.setClickable(false);
+			
+			break;
+		case 4:
+			btn5.setImageDrawable(circle);
+			btn5.setTag("circle");
+			btn5.setClickable(false);
+			
+			break;
+		case 5:
+			btn6.setImageDrawable(circle);
+			btn6.setTag("circle");
+			btn6.setClickable(false);
+			
+			break;
+		case 6:
+			btn7.setImageDrawable(circle);
+			btn7.setTag("circle");
+			btn7.setClickable(false);
+			
+			break;
+		case 7:
+			btn8.setImageDrawable(circle);
+			btn8.setTag("circle");
+			btn8.setClickable(false);
+			
+			break;
+		case 8:
+			btn9.setImageDrawable(circle);
+			btn9.setTag("circle");
+			btn9.setClickable(false);
+			
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private void aiHard() {
+
+		Object d1 = btn1.getTag();
+		Object d2 = btn2.getTag();
+		Object d3 = btn3.getTag();
+		Object d4 = btn4.getTag();
+		Object d5 = btn5.getTag();
+		Object d6 = btn6.getTag();
+		Object d7 = btn7.getTag();
+		Object d8 = btn8.getTag();
+		Object d9 = btn9.getTag();
+		String[] a = new String[9];
+
+		if (d1 != null) {
+			a[0] = d1.toString();
+		}
+		if (d2 != null) {
+			a[1] = d2.toString();
+		}
+		if (d3 != null) {
+			a[2] = d3.toString();
+		}
+		if (d4 != null) {
+			a[3] = d4.toString();
+		}
+		if (d5 != null) {
+			a[4] = d5.toString();
+		}
+		if (d6 != null) {
+			a[5] = d6.toString();
+		}
+		if (d7 != null) {
+			a[6] = d7.toString();
+		}
+		if (d8 != null) {
+			a[7] = d8.toString();
+		}
+		if (d9 != null) {
+			a[8] = d9.toString();
+		}
+
+		Ai ai = new Ai(a, false);
+		int moveAi = ai.move();
+		setAiButton(moveAi);
+		check();
+	}
+
+	
     private void check(){    	    	
     	Object d1 = btn1.getTag();
     	Object d2 = btn2.getTag();
@@ -425,18 +768,6 @@ public class Game extends Activity {
     }
     
    
-
-    private void twoPlayers(){    	
-    	if(turn == true){
-        	TextView t1 = (TextView) findViewById(R.id.turn);
-        	t1.setText("It is "+player2+" 's turn");
-    	}else{
-        	TextView t1 = (TextView) findViewById(R.id.turn);
-        	t1.setText("It is "+player1+" 's turn");
-    	}
-    }
-   	
-
 	private Drawable getImage2(ImageButton a) {
 
 		return a.getDrawable();
