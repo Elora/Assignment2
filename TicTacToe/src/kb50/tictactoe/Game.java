@@ -544,7 +544,17 @@ public class Game extends Activity {
     				loseDialog();
     			}
         	}
-    	} 	
+    	}
+    	
+    	//Draw check 
+    	if(d1 != null && d2 != null && d3 != null && d4 != null && d5 != null && d6 != null && d7 != null && d8 != null && d9 != null){
+    		drawDialog();
+    	}
+    }
+    
+    private void drawDialog(){
+    	Fragment dialogFragment = Fragment.newInstance("It's a draw! Want to play again?");
+		dialogFragment.show(getFragmentManager(), "dialog"); 
     }
     
     private void loseDialog(){
