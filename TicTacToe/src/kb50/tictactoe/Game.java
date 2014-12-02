@@ -1,5 +1,7 @@
 package kb50.tictactoe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import android.app.Activity;
 import android.content.Context;
@@ -13,9 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
 
+import java.util.Random;
+
 public class Game extends Activity {
 	private boolean turn;
-	private boolean multiplayer;
 	private boolean difEasy;
 	private ImageButton btn1;
 	private ImageButton btn2;
@@ -31,6 +34,12 @@ public class Game extends Activity {
 	private Drawable circle;
 	private String player1;
 	private String player2;	
+	private boolean multiplayer;
+	
+	ImageButton[] btns;
+
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +54,12 @@ public class Game extends Activity {
 		btn7 = (ImageButton) findViewById(R.id.ib_7);
 		btn8 = (ImageButton) findViewById(R.id.ib_8);
 		btn9 = (ImageButton) findViewById(R.id.ib_9);
+		btns = new ImageButton[] { btn1, btn2, btn3, btn4, btn5, btn6, btn7,
+				btn8, btn9 };
 		res = getResources();
 		cross = res.getDrawable(R.drawable.candycane);
 		circle = res.getDrawable(R.drawable.cookie);
+		turn = true;
 		setBaseVar();
 	}
 
@@ -58,11 +70,14 @@ public class Game extends Activity {
 
 		outState.putInt("testKey", sbValue);
 		outState.putBoolean("turn", turn);
+
 		outState.putBoolean("dif", difEasy);
 		outState.putBoolean("mul", multiplayer);
 		outState.putString("p1", player1);
 		outState.putString("p2", player2);
 		
+
+
 		Object d1 = btn1.getTag();
 		Object d2 = btn2.getTag();
 		Object d3 = btn3.getTag();
@@ -122,7 +137,9 @@ public class Game extends Activity {
 
 		player1 = savedInstanceState.getString("p1");
 		player2 = savedInstanceState.getString("p2");
-		
+	
+	
+
 		String[] a = new String[9];
 		a = savedInstanceState.getStringArray("a");
 		if (a[0] != null) {
@@ -224,203 +241,24 @@ public class Game extends Activity {
 		startActivity(k);
 	}
 
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_back:
-			Intent k = new Intent(this, MainActivity.class);
-			startActivity(k);
-			break;
-		case R.id.ib_1:
-			if (turn == true) {
-				btn1.setImageDrawable(cross);
 
-				btn1.setTag("cross");
 
-				btn1.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn1.setImageDrawable(circle);
 
-				btn1.setTag("circle");
+	private void onePlayer() {
+		if (turn == true) {
+			TextView t1 = (TextView) findViewById(R.id.turn);
+			// t1.setText("It is Your turn");
+		} else {
+			aiEasy(btns);
 
-				btn1.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_2:
-			if (turn == true) {
-				btn2.setImageDrawable(cross);
+			check();
 
-				btn2.setTag("cross");
+			turn = true;
 
-				btn2.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn2.setImageDrawable(circle);
-
-				btn2.setTag("circle");
-
-				btn2.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_3:
-			if (turn == true) {
-				btn3.setImageDrawable(cross);
-
-				btn3.setTag("cross");
-
-				btn3.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn3.setImageDrawable(circle);
-
-				btn3.setTag("circle");
-
-				btn3.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_4:
-			if (turn == true) {
-				btn4.setImageDrawable(cross);
-
-				btn4.setTag("cross");
-
-				btn4.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn4.setImageDrawable(circle);
-
-				btn4.setTag("circle");
-
-				btn4.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_5:
-			if (turn == true) {
-				btn5.setImageDrawable(cross);
-
-				btn5.setTag("cross");
-
-				btn5.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn5.setImageDrawable(circle);
-
-				btn5.setTag("circle");
-
-				btn5.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_6:
-			if (turn == true) {
-				btn6.setImageDrawable(cross);
-
-				btn6.setTag("cross");
-
-				btn6.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn6.setImageDrawable(circle);
-
-				btn6.setTag("circle");
-
-				btn6.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_7:
-			if (turn == true) {
-				btn7.setImageDrawable(cross);
-
-				btn7.setTag("cross");
-
-				btn7.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn7.setImageDrawable(circle);
-
-				btn7.setTag("circle");
-
-				btn7.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_8:
-			if (turn == true) {
-				btn8.setImageDrawable(cross);
-
-				btn8.setTag("cross");
-
-				btn8.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn8.setImageDrawable(circle);
-
-				btn8.setTag("circle");
-
-				btn8.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
-		case R.id.ib_9:
-			if (turn == true) {
-				btn9.setImageDrawable(cross);
-
-				btn9.setTag("cross");
-
-				btn9.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = false;
-			} else {
-				btn9.setImageDrawable(circle);
-
-				btn9.setTag("circle");
-
-				btn9.setClickable(false);
-				check();
-				multiplayerCheck();
-				turn = true;
-			}
-			break;
 		}
+
 	}
+
 
 	private void multiplayerCheck() {
 		if (multiplayer == false) {
@@ -586,15 +424,7 @@ public class Game extends Activity {
     	startActivity(intent);
     }
     
-    private void onePlayer(){
-    	if(turn == true){
-        	TextView t1 = (TextView) findViewById(R.id.turn);
-        	//t1.setText("It is Your turn");
-    	}else{
-    		//computer action
-    	}
-
-    }
+   
 
     private void twoPlayers(){    	
     	if(turn == true){
@@ -605,7 +435,32 @@ public class Game extends Activity {
         	t1.setText("It is "+player1+" 's turn");
     	}
     }
-    private Drawable getImage2(ImageButton a){
-    	return a.getDrawable();
-    }
+   	
+
+	private Drawable getImage2(ImageButton a) {
+
+		return a.getDrawable();
+	}
+
+	public void aiEasy(ImageButton[] o) {
+
+		Random nm = new Random();
+		List<ImageButton> btns = new ArrayList<ImageButton>();
+		for (int i = 0; i < o.length; i++) {
+
+			if (o[i].getTag() == null) {
+				btns.add(o[i]);
+
+			}
+
+		}
+		if (!btns.isEmpty()) {
+			int max = btns.size();
+			int placeRandom = nm.nextInt(max);
+			btns.get(placeRandom).setImageDrawable(circle);
+			btns.get(placeRandom).setTag("circle");
+			btns.get(placeRandom).setClickable(false);
+		}
+	}
+
 }
