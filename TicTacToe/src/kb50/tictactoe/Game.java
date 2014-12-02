@@ -3,6 +3,8 @@ package kb50.tictactoe;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import android.R.string;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,10 +35,11 @@ public class Game extends Activity {
 	private Drawable cross;
 	private Drawable circle;
 	private String player1;
-	private String player2;	
+	private String player2;
 	private boolean multiplayer;
-	
+
 	ImageButton[] btns;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -233,8 +236,6 @@ public class Game extends Activity {
 		startActivity(k);
 	}
 
-
-
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_back:
@@ -414,18 +415,18 @@ public class Game extends Activity {
 
 	}
 
-
 	private void multiplayerCheck() {
 		if (multiplayer == false) {
+			turn = false;
 			onePlayer();
+			check();
+			turn = true;
 		} else {
 			twoPlayers();
-			if (turn==true){
-				turn=false;
-		
-			}
-			else{
-				turn =true;
+			if (turn == true) {
+				turn = false;
+			} else {
+				turn = true;
 			}
 		}
 	}
@@ -459,22 +460,19 @@ public class Game extends Activity {
 		btn9.setTag(null);
 		btn9.setClickable(true);
 
+		if (multiplayer == false) {
+			turn = true;
+		}
+
 	}
 
 	private void onePlayer() {
 		if (difEasy == true) {
 			aiEasy(btns);
-			} 
-		else {
-			turn=false;
+		} else {
 			aiMedium();
-			check();
-			turn=true;
-			
 		}
-
 	}
-
 
 	private void twoPlayers() {
 		if (turn == true) {
@@ -485,7 +483,6 @@ public class Game extends Activity {
 			t1.setText("It is " + player1 + " 's turn");
 		}
 	}
-
 
 	private void aiMedium() {
 
@@ -533,8 +530,8 @@ public class Game extends Activity {
 		setAiButton(moveAi);
 		
 	}
-	
-	private void setAiButton(int move){
+
+	private void setAiButton(int move) {
 		switch (move) {
 		case 0:
 			btn1.setImageDrawable(circle);
@@ -545,49 +542,49 @@ public class Game extends Activity {
 			btn2.setImageDrawable(circle);
 			btn2.setTag("circle");
 			btn2.setClickable(false);
-			
+
 			break;
 		case 2:
 			btn3.setImageDrawable(circle);
 			btn3.setTag("circle");
 			btn3.setClickable(false);
-			
+
 			break;
 		case 3:
 			btn4.setImageDrawable(circle);
 			btn4.setTag("circle");
 			btn4.setClickable(false);
-			
+
 			break;
 		case 4:
 			btn5.setImageDrawable(circle);
 			btn5.setTag("circle");
 			btn5.setClickable(false);
-			
+
 			break;
 		case 5:
 			btn6.setImageDrawable(circle);
 			btn6.setTag("circle");
 			btn6.setClickable(false);
-			
+
 			break;
 		case 6:
 			btn7.setImageDrawable(circle);
 			btn7.setTag("circle");
 			btn7.setClickable(false);
-			
+
 			break;
 		case 7:
 			btn8.setImageDrawable(circle);
 			btn8.setTag("circle");
 			btn8.setClickable(false);
-			
+
 			break;
 		case 8:
 			btn9.setImageDrawable(circle);
 			btn9.setTag("circle");
 			btn9.setClickable(false);
-			
+
 			break;
 
 		default:
@@ -642,96 +639,136 @@ public class Game extends Activity {
 		check();
 	}
 
-	
-    private void check(){    	    	
-    	Object d1 = btn1.getTag();
-    	Object d2 = btn2.getTag();
-    	Object d3 = btn3.getTag();
-    	Object d4 = btn4.getTag();
-    	Object d5 = btn5.getTag();
-    	Object d6 = btn6.getTag();
-    	Object d7 = btn7.getTag();
-    	Object d8 = btn8.getTag();
-    	Object d9 = btn9.getTag();
-    	
-    	//Horizontal check 
-    	if(d1 != null && d2 != null && d3 != null){
-    		if(d1.equals(d2) && d2.equals(d3)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}else if(d4 != null && d5 != null && d6 != null){
-    		if(d4.equals(d5) && d5.equals(d6)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}else if(d7 != null && d8 != null && d9 != null){
-    		if(d7.equals(d8) && d8.equals(d9)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}
-    	
-    	//Vertical check
-    	if(d1 != null && d4 != null && d7 != null){
-    		if(d1.equals(d4) && d4.equals(d7)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}else if(d2 != null && d5 != null && d8 != null){
-    		if(d2.equals(d5) && d5.equals(d8)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}else if(d3 != null && d6 != null && d9 != null){
-    		if(d3.equals(d6) && d6.equals(d9)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}    	
-    	
-    	//Diagonal check
-    	if(d1 != null && d5 != null && d9 != null){
-    		if(d1.equals(d5) && d5.equals(d9)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}else if(d3 != null && d5 != null && d7 != null){
-    		if(d3.equals(d5) && d5.equals(d7)){
-    			if(turn == true){
-    				winDialog();
-    			}else{
-    				loseDialog();
-    			}
-        	}
-    	}
-    	
-    	//Draw check 
-    	if(d1 != null && d2 != null && d3 != null && d4 != null && d5 != null && d6 != null && d7 != null && d8 != null && d9 != null){
-    		drawDialog();
-    	}
-    }
+	private void dia() {
+		if (turn == true) {
+			winDialog();
+		} else {
+			loseDialog();
+		}
+	}
+
+	private void check() {
+		Object d1 = btn1.getTag();
+		Object d2 = btn2.getTag();
+		Object d3 = btn3.getTag();
+		Object d4 = btn4.getTag();
+		Object d5 = btn5.getTag();
+		Object d6 = btn6.getTag();
+		Object d7 = btn7.getTag();
+		Object d8 = btn8.getTag();
+		Object d9 = btn9.getTag();
+
+		String[] a = new String[9];
+
+		if (d1 != null) {
+			a[0] = d1.toString();
+		} else {
+			a[0] = "";
+		}
+		if (d2 != null) {
+			a[1] = d2.toString();
+		} else {
+			a[1] = "";
+		}
+		if (d3 != null) {
+			a[2] = d3.toString();
+		} else {
+			a[2] = "";
+		}
+		if (d4 != null) {
+			a[3] = d4.toString();
+		} else {
+			a[3] = "";
+		}
+		if (d5 != null) {
+			a[4] = d5.toString();
+		} else {
+			a[4] = "";
+		}
+		if (d6 != null) {
+			a[5] = d6.toString();
+		} else {
+			a[5] = "";
+		}
+		if (d7 != null) {
+			a[6] = d7.toString();
+		} else {
+			a[6] = "";
+		}
+		if (d8 != null) {
+			a[7] = d8.toString();
+		} else {
+			a[7] = "";
+		}
+		if (d9 != null) {
+			a[8] = d9.toString();
+		} else {
+			a[8] = "";
+		}
+
+		String cr = "cross";
+		String ci = "circle";
+		// hor
+		if (a[0].equals(cr) && a[1].equals(cr) && a[2].equals(cr)) {
+
+			dia();
+		}
+		else if (a[3].equals(cr) && a[4].equals(cr) && a[5].equals(cr)) {
+			dia();
+		}
+		else if (a[6].equals(cr) && a[7].equals(cr) && a[8].equals(cr)) {
+			dia();
+		}
+		else if (a[0].equals(ci) && a[1].equals(ci) && a[2].equals(ci)) {
+			dia();
+		}
+		else if (a[3].equals(ci) && a[4].equals(ci) && a[5].equals(ci)) {
+			dia();
+		}
+		else if (a[6].equals(ci) && a[7].equals(ci) && a[8].equals(ci)) {
+			dia();
+		}
+
+		// ver
+		else if (a[0].equals(cr) && a[3].equals(cr) && a[6].equals(cr)) {
+			dia();
+		}
+		else if (a[1].equals(cr) && a[4].equals(cr) && a[7].equals(cr)) {
+			dia();
+		}
+		else if (a[2].equals(cr) && a[5].equals(cr) && a[8].equals(cr)) {
+			dia();
+		}
+		else if (a[0].equals(ci) && a[3].equals(ci) && a[6].equals(ci)) {
+			dia();
+		}
+		else if (a[1].equals(ci) && a[4].equals(ci) && a[7].equals(ci)) {
+			dia();
+		}
+		else if (a[2].equals(ci) && a[5].equals(ci) && a[8].equals(ci)) {
+			dia();
+		}
+
+		// dia
+		else if (a[0].equals(cr) && a[4].equals(cr) && a[8].equals(cr)) {
+			dia();
+		}
+		else if (a[2].equals(cr) && a[4].equals(cr) && a[6].equals(cr)) {
+			dia();
+		}
+		else if (a[0].equals(ci) && a[4].equals(ci) && a[8].equals(ci)) {
+			dia();
+		}
+		else if (a[2].equals(ci) && a[4].equals(ci) && a[6].equals(ci)) {
+			dia();
+		}
+
+		else if(!a[0].equals("") && !a[1].equals("") && !a[2].equals("") && !a[3].equals("") && !a[4].equals("") && !a[5].equals("") && !a[6].equals("") && !a[7].equals("") && !a[8].equals("")){
+			drawDialog();
+		}}
+		
+   
+    
     
     private void drawDialog(){
     	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.drawDialog));
@@ -748,16 +785,6 @@ public class Game extends Activity {
     	}
     }
     
-    private void winDialog(){
-    	if(multiplayer == false){
-        	Fragment dialogFragment = Fragment.newInstance(res.getString(R.string.winDialog));
-    		dialogFragment.show(getFragmentManager(), "dialog");
-    	}else{
-    		Fragment dialogFragment = Fragment.newInstance(player1 + " " + res.getString(R.string.multplayerWin));
-    		dialogFragment.show(getFragmentManager(), "dialog");
-    	}
-    }
-    
     public void doPositiveClick(){
     	clearScreen();
     }
@@ -768,6 +795,19 @@ public class Game extends Activity {
     }
     
    
+	
+	
+	private void winDialog() {
+		if (multiplayer == false) {
+			Fragment dialogFragment = Fragment
+					.newInstance("You've won and Santa is very pleased. Care to play again?");
+			dialogFragment.show(getFragmentManager(), "dialog");
+		} else {
+			Fragment dialogFragment = Fragment.newInstance(player1
+					+ " wins! Want to play again?");
+			dialogFragment.show(getFragmentManager(), "dialog");
+		}
+	}
 	private Drawable getImage2(ImageButton a) {
 
 		return a.getDrawable();

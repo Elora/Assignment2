@@ -24,61 +24,120 @@ public class Ai {
 		// Rule 1: If I have a winning move, take it.
 
 		for (int i = 0; i < 9; i++) {
-			if (btns[i]==null) {
+			if (btns[i] == null) {
 				btns[i] = "";
 			}
 		}
 
 		// top row
-		if (btns[0].equals("circle") && btns[1].equals("circle") && btns[2].equals("")) {
+		if (btns[0].equals("circle") && btns[1].equals("circle")
+				&& btns[2].equals("")) {
 			return 2;
-		}  if (btns[1].equals("circle") && btns[2].equals("circle") && btns[0].equals("")) {
+		}
+		if (btns[1].equals("circle") && btns[2].equals("circle")
+				&& btns[0].equals("")) {
 			return 0;
-		}  if (btns[0].equals("circle") && btns[2].equals("circle") && btns[1].equals("")) {
+		}
+		if (btns[0].equals("circle") && btns[2].equals("circle")
+				&& btns[1].equals("")) {
 			return 1;
 		}
 		// second row
-		if (btns[3].equals("circle") && btns[4].equals("circle") && btns[5].equals("")) {
+		if (btns[3].equals("circle") && btns[4].equals("circle")
+				&& btns[5].equals("")) {
 			return 5;
-		} if (btns[4].equals("circle") && btns[5].equals("circle") && btns[3].equals("")) {
+		}
+		if (btns[4].equals("circle") && btns[5].equals("circle")
+				&& btns[3].equals("")) {
 			return 3;
-		} if (btns[3].equals("circle") && btns[5].equals("circle") && btns[4].equals("")) {
+		}
+		if (btns[3].equals("circle") && btns[5].equals("circle")
+				&& btns[4].equals("")) {
 			return 4;
 		}
 		// 3e row
-		if (btns[6].equals("circle") && btns[7].equals("circle") && btns[8].equals("")) {
+		if (btns[6].equals("circle") && btns[7].equals("circle")
+				&& btns[8].equals("")) {
 			return 8;
-		} if (btns[7].equals("circle") && btns[8].equals("circle") && btns[6].equals("")) {
+		}
+		if (btns[7].equals("circle") && btns[8].equals("circle")
+				&& btns[6].equals("")) {
 			return 6;
-		} if (btns[6].equals("circle") && btns[8].equals("circle") && btns[7].equals("")) {
+		}
+		if (btns[6].equals("circle") && btns[8].equals("circle")
+				&& btns[7].equals("")) {
 			return 7;
 		}
 
 		// vert 0 3 6
-		if (btns[0].equals("circle") && btns[3].equals("circle") && btns[6].equals("")) {
+		if (btns[0].equals("circle") && btns[3].equals("circle")
+				&& btns[6].equals("")) {
 			return 6;
-		} if (btns[0].equals("circle") && btns[6].equals("circle") && btns[3].equals("")) {
+		}
+		if (btns[0].equals("circle") && btns[6].equals("circle")
+				&& btns[3].equals("")) {
 			return 3;
-		} if (btns[3].equals("circle") && btns[6].equals("circle") && btns[0].equals("")) {
+		}
+		if (btns[3].equals("circle") && btns[6].equals("circle")
+				&& btns[0].equals("")) {
 			return 0;
 		}
 
 		// vert 1 4 7
-		if (btns[1].equals("circle") && btns[4].equals("circle") && btns[7].equals("")) {
+		if (btns[1].equals("circle") && btns[4].equals("circle")
+				&& btns[7].equals("")) {
 			return 7;
-		} if (btns[1].equals("circle") && btns[7].equals("circle") && btns[4].equals("")) {
+		}
+		if (btns[1].equals("circle") && btns[7].equals("circle")
+				&& btns[4].equals("")) {
 			return 4;
-		} if (btns[4].equals("circle") && btns[7].equals("circle") && btns[1].equals("")) {
+		}
+		if (btns[4].equals("circle") && btns[7].equals("circle")
+				&& btns[1].equals("")) {
 			return 1;
 		}
 		// vert 2 5 8
-		if (btns[2].equals("circle") && btns[5].equals("circle") && btns[8].equals("")) {
+		if (btns[2].equals("circle") && btns[5].equals("circle")
+				&& btns[8].equals("")) {
 			return 8;
-		} if (btns[2].equals("circle") && btns[8].equals("circle") && btns[5].equals("")) {
+		}
+		if (btns[2].equals("circle") && btns[8].equals("circle")
+				&& btns[5].equals("")) {
 			return 5;
-		} if (btns[5].equals("circle") && btns[8].equals("circle") && btns[2].equals("")) {
+		}
+		if (btns[5].equals("circle") && btns[8].equals("circle")
+				&& btns[2].equals("")) {
 			return 2;
-		} else {
+		}
+
+		// dia 0 4 8
+		if (btns[0].equals("circle") && btns[4].equals("circle")
+				&& btns[8].equals("")) {
+			return 8;
+		}
+		if (btns[4].equals("circle") && btns[8].equals("circle")
+				&& btns[0].equals("")) {
+			return 0;
+		}
+		if (btns[0].equals("circle") && btns[8].equals("circle")
+				&& btns[4].equals("")) {
+			return 4;
+		}
+		// dia 2 4 6
+		if (btns[2].equals("circle") && btns[4].equals("circle")
+				&& btns[6].equals("")) {
+			return 6;
+		}
+		if (btns[4].equals("circle") && btns[6].equals("circle")
+				&& btns[2].equals("")) {
+			return 2;
+		}
+		if (btns[2].equals("circle") && btns[6].equals("circle")
+				&& btns[4].equals("")) {
+			return 4;
+		}
+
+		else {
 			return blockWinningMove();
 		}
 
@@ -87,56 +146,110 @@ public class Ai {
 	private int blockWinningMove() {
 		// Rule 2: If the opponent has a winning move, block it.
 		// top row
-		if (btns[0].equals("cross") && btns[1].equals("cross") && btns[2].equals("")) {
+		if (btns[0].equals("cross") && btns[1].equals("cross")
+				&& btns[2].equals("")) {
 			return 2;
-		} if (btns[1].equals("cross") && btns[2].equals("cross") && btns[0].equals("")) {
+		}
+		if (btns[1].equals("cross") && btns[2].equals("cross")
+				&& btns[0].equals("")) {
 			return 0;
-		} if (btns[0].equals("cross") && btns[2].equals("cross") && btns[1].equals("")) {
+		}
+		if (btns[0].equals("cross") && btns[2].equals("cross")
+				&& btns[1].equals("")) {
 			return 1;
 		}
 		// second row
-		if (btns[3].equals("cross") && btns[4].equals("cross") && btns[5].equals("")) {
+		if (btns[3].equals("cross") && btns[4].equals("cross")
+				&& btns[5].equals("")) {
 			return 5;
-		} 
-		if (btns[4].equals("cross") && btns[5].equals("cross") && btns[3].equals("")) {
+		}
+		if (btns[4].equals("cross") && btns[5].equals("cross")
+				&& btns[3].equals("")) {
 			return 3;
 		}
-		if (btns[3].equals("cross") && btns[5].equals("cross") && btns[4].equals("")) {
+		if (btns[3].equals("cross") && btns[5].equals("cross")
+				&& btns[4].equals("")) {
 			return 4;
 		}
 		// 3e row
-		if (btns[6].equals("cross") && btns[7].equals("cross") && btns[8].equals("")) {
+		if (btns[6].equals("cross") && btns[7].equals("cross")
+				&& btns[8].equals("")) {
 			return 8;
-		}  if (btns[7].equals("cross") && btns[8].equals("cross") && btns[6].equals("")) {
+		}
+		if (btns[7].equals("cross") && btns[8].equals("cross")
+				&& btns[6].equals("")) {
 			return 6;
-		} if (btns[6].equals("cross") && btns[8].equals("cross") && btns[7].equals("")) {
+		}
+		if (btns[6].equals("cross") && btns[8].equals("cross")
+				&& btns[7].equals("")) {
 			return 7;
 		}
 
 		// vert 0 3 6
-		if (btns[0].equals("cross") && btns[3].equals("cross") && btns[6].equals("")) {
+		if (btns[0].equals("cross") && btns[3].equals("cross")
+				&& btns[6].equals("")) {
 			return 6;
-		} if (btns[0].equals("cross") && btns[6].equals("cross") && btns[3].equals("")) {
+		}
+		if (btns[0].equals("cross") && btns[6].equals("cross")
+				&& btns[3].equals("")) {
 			return 3;
-		} if (btns[3].equals("cross") && btns[6].equals("cross") && btns[0].equals("")) {
+		}
+		if (btns[3].equals("cross") && btns[6].equals("cross")
+				&& btns[0].equals("")) {
 			return 0;
 		}
 
 		// vert 1 4 7
-		if (btns[1].equals("cross") && btns[4].equals("cross") && btns[7].equals("")) {
+		if (btns[1].equals("cross") && btns[4].equals("cross")
+				&& btns[7].equals("")) {
 			return 7;
-		} if (btns[1].equals("cross") && btns[7].equals("cross") && btns[4].equals("")) {
+		}
+		if (btns[1].equals("cross") && btns[7].equals("cross")
+				&& btns[4].equals("")) {
 			return 4;
-		} if (btns[4].equals("cross") && btns[7].equals("cross") && btns[1].equals("")) {
+		}
+		if (btns[4].equals("cross") && btns[7].equals("cross")
+				&& btns[1].equals("")) {
 			return 1;
 		}
 		// vert 2 5 8
-		if (btns[2].equals("cross") && btns[5].equals("cross") && btns[8].equals("")) {
+		if (btns[2].equals("cross") && btns[5].equals("cross")
+				&& btns[8].equals("")) {
 			return 8;
-		} if (btns[2].equals("cross") && btns[8].equals("cross") && btns[5].equals("")) {
+		}
+		if (btns[2].equals("cross") && btns[8].equals("cross")
+				&& btns[5].equals("")) {
 			return 5;
-		} if (btns[5].equals("cross") && btns[8].equals("cross") && btns[2].equals("")) {
+		}
+		if (btns[5].equals("cross") && btns[8].equals("cross")
+				&& btns[2].equals("")) {
 			return 2;
+		}
+		// dia 0 4 8
+		if (btns[0].equals("cross") && btns[4].equals("cross")
+				&& btns[8].equals("")) {
+			return 8;
+		}
+		if (btns[4].equals("cross") && btns[8].equals("cross")
+				&& btns[0].equals("")) {
+			return 0;
+		}
+		if (btns[0].equals("cross") && btns[8].equals("cross")
+				&& btns[4].equals("")) {
+			return 4;
+		}
+		// dia 2 4 6
+		if (btns[2].equals("cross") && btns[4].equals("cross")
+				&& btns[6].equals("")) {
+			return 6;
+		}
+		if (btns[4].equals("cross") && btns[6].equals("cross")
+				&& btns[2].equals("")) {
+			return 2;
+		}
+		if (btns[2].equals("cross") && btns[6].equals("cross")
+				&& btns[4].equals("")) {
+			return 4;
 		} else {
 			if (medium = true) {
 				return moveMedium();
