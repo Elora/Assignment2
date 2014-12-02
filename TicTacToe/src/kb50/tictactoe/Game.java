@@ -430,7 +430,7 @@ public class Game extends Activity {
 		}
 	}
 
-	private void clearscreen(){
+	private void clearScreen(){
 		btn1.setImageDrawable(null);
 		btn1.setTag(null);
 		btn1.setClickable(true);
@@ -568,11 +568,12 @@ public class Game extends Activity {
     }
     
     public void doPositiveClick(){
-    	Log.d("Game", "User clicks OK");
+    	clearScreen();
     }
     
     public void doNegativeClick(){
-    	Log.d("Game", "User clicks Cancel");
+    	Intent intent = new Intent(this, MainActivity.class);
+    	startActivity(intent);
     }
     
     private void onePlayer(){
