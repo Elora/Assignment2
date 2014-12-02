@@ -1,58 +1,89 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background" >
+    android:background="@drawable/background"
+    android:orientation="horizontal" >
 
-    <TableRow>
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" >
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/label_p1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_p1" />
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.7" >
 
-        <EditText
-            android:id="@+id/input_p1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_p1" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/label_p2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_p2" />
-
-        <EditText
-            android:id="@+id/input_p2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/input_p2" />
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/btn_play"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="@string/btn_play" />
-    </TableRow>
+            android:layout_marginTop="150dp"
+            android:orientation="vertical" >
 
-    <TableRow>
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/whitebackground"
+                >
 
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="@string/btn_back" />
-    </TableRow>
+                <TableRow>
 
-</TableLayout>
+                    <TextView
+                        android:id="@+id/label_p1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_p1" />
 
+                    <EditText
+                        android:id="@+id/input_p1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_p1" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/label_p2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_p2" />
+
+                    <EditText
+                        android:id="@+id/input_p2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_p2" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/menubutton"
+                android:onClick="onClick"
+                android:text="@string/btn_play"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backbutton"
+                android:onClick="onClick" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" >
+    </RelativeLayout>
+
+</LinearLayout>

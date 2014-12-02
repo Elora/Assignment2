@@ -1,40 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background" >
-    
-    <TextView 
-        android:id="@+id/difficulty"
-        android:text="@string/difficulty"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btn_easy"
-        android:text="@string/btn_easy"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"/>
-    
-    <Button 
-       android:id="@+id/btn_hard"
-       android:text="@string/btn_hard"
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:onClick="onClick" />
-		
-    <Space
-    	    android:layout_width="fill_parent"
-       		android:layout_height="280dp"
-            android:layout_gravity="fill"/>
-    	<Button
-    	    android:id="@+id/btn_back"
-	        android:layout_width="fill_parent"
-       		android:layout_height="wrap_content"
-       		android:text="@string/btn_back"
-     		android:onClick="onClick"
-        	android:gravity="center"/>
-    	
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.7" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_easy"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/menubutton"
+                android:onClick="onClick"
+                android:text="@string/btn_easy"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btn_hard"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menubutton"
+                android:onClick="onClick"
+                android:text="@string/btn_hard"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backbutton"
+                android:onClick="onClick" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.15" >
+    </RelativeLayout>
+
 </LinearLayout>
