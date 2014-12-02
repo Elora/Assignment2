@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 
 public class Game extends Activity {
 	private boolean turn;
@@ -28,9 +29,8 @@ public class Game extends Activity {
 	private Resources res;
 	private Drawable cross;
 	private Drawable circle;
-	private String Player1;
-	private String Player2;
-
+	private String player1;
+	private String player2;	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +60,9 @@ public class Game extends Activity {
 		outState.putBoolean("turn", turn);
 		outState.putBoolean("dif", difEasy);
 		outState.putBoolean("mul", multiplayer);
-		outState.putString("p1", Player1);
-		outState.putString("p2", Player2);
-
+		outState.putString("p1", player1);
+		outState.putString("p2", player2);
+		
 		Object d1 = btn1.getTag();
 		Object d2 = btn2.getTag();
 		Object d3 = btn3.getTag();
@@ -117,10 +117,12 @@ public class Game extends Activity {
 
 		turn = savedInstanceState.getBoolean("turn"); // example key
 		multiplayer = savedInstanceState.getBoolean("mul");
-		difEasy = savedInstanceState.getBoolean("dif");
-		Player1 = savedInstanceState.getString("p1");
-		Player2 = savedInstanceState.getString("p2");
 
+		difEasy = savedInstanceState.getBoolean("dif");
+
+		player1 = savedInstanceState.getString("p1");
+		player2 = savedInstanceState.getString("p2");
+		
 		String[] a = new String[9];
 		a = savedInstanceState.getStringArray("a");
 		if (a[0] != null) {
@@ -172,9 +174,9 @@ public class Game extends Activity {
 			String a = getIntent().getStringExtra("Player");
 			if (a.equals("two")) {
 
-				Player1 = getIntent().getStringExtra("p1_name");
-				Player2 = getIntent().getStringExtra("p2_name");
-				if (Player1.equals("") || Player2.equals("")) {
+				player1 = getIntent().getStringExtra("p1_name");
+				player2 = getIntent().getStringExtra("p2_name");
+				if (player1.equals("") || player2.equals("")) {
 					// something went wrong
 				} else {
 					multiplayer = true;
@@ -184,14 +186,14 @@ public class Game extends Activity {
 						turn = true;
 
 						TextView t1 = (TextView) findViewById(R.id.turn);
-						t1.setText("It is " + Player1 + " 's turn");
+						t1.setText("It is " + player1 + " 's turn");
 
 					} else {
 						turn = false;
 
 						TextView t1 = (TextView) findViewById(R.id.turn);
 
-						t1.setText("It is " + Player2 + " 's turn");
+						t1.setText("It is " + player2 + " 's turn");
 
 					}
 
@@ -217,8 +219,8 @@ public class Game extends Activity {
 
 	}
 
-	public void onClickBtn(View v) {
-		Intent k = new Intent(this, MainActivity.class);
+    public void onClickBtn(View v){
+    	Intent k = new Intent (this, MainActivity.class);
 		startActivity(k);
 	}
 
@@ -428,99 +430,6 @@ public class Game extends Activity {
 		}
 	}
 
-	private void check() {
-		Object d1 = btn1.getTag();
-		Object d2 = btn2.getTag();
-		Object d3 = btn3.getTag();
-		Object d4 = btn4.getTag();
-		Object d5 = btn5.getTag();
-		Object d6 = btn6.getTag();
-		Object d7 = btn7.getTag();
-		Object d8 = btn8.getTag();
-		Object d9 = btn9.getTag();
-
-		// Horizontal check
-		if (d1 != null && d2 != null && d3 != null) {
-			if (d1.equals(d2) && d2.equals(d3)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Horizontal check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		} else if (d4 != null && d5 != null && d6 != null) {
-			if (d4.equals(d5) && d5.equals(d6)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Horizontal check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		} else if (d7 != null && d8 != null && d9 != null) {
-			if (d7.equals(d8) && d8.equals(d9)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Horizontal check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		}
-
-		// Vertical check
-		if (d1 != null && d4 != null && d7 != null) {
-			if (d1.equals(d4) && d4.equals(d7)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Vertical check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		} else if (d2 != null && d5 != null && d8 != null) {
-			if (d2.equals(d5) && d5.equals(d8)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Vertical check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		} else if (d3 != null && d6 != null && d9 != null) {
-			if (d3.equals(d6) && d6.equals(d9)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Vertical check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		}
-
-		// Diagonal check
-		if (d1 != null && d5 != null && d9 != null) {
-			if (d1.equals(d5) && d5.equals(d9)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Diagonal check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		} else if (d3 != null && d5 != null && d7 != null) {
-			if (d3.equals(d5) && d5.equals(d7)) {
-				Context context = getApplicationContext();
-				CharSequence text = "Diagonal check works";
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, text, duration);
-				toast.show();
-			}
-		}
-	}
-
 	private void clearscreen(){
 		btn1.setImageDrawable(null);
 		btn1.setTag(null);
@@ -552,34 +461,140 @@ public class Game extends Activity {
 		
 		
 	}
-	
-	private void onePlayer() {
-		if (turn == true) {
-			TextView t1 = (TextView) findViewById(R.id.turn);
-			// t1.setText("It is Your turn");
-		} else {
-			if(difEasy == true){
-				 //aiEasy();
-			}
-			else{
-				//aiHard();
-			}
 
-		}
+    private void check(){    	    	
+    	Object d1 = btn1.getTag();
+    	Object d2 = btn2.getTag();
+    	Object d3 = btn3.getTag();
+    	Object d4 = btn4.getTag();
+    	Object d5 = btn5.getTag();
+    	Object d6 = btn6.getTag();
+    	Object d7 = btn7.getTag();
+    	Object d8 = btn8.getTag();
+    	Object d9 = btn9.getTag();
+    	
+    	//Horizontal check 
+    	if(d1 != null && d2 != null && d3 != null){
+    		if(d1.equals(d2) && d2.equals(d3)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}else if(d4 != null && d5 != null && d6 != null){
+    		if(d4.equals(d5) && d5.equals(d6)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}else if(d7 != null && d8 != null && d9 != null){
+    		if(d7.equals(d8) && d8.equals(d9)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}
+    	
+    	//Vertical check
+    	if(d1 != null && d4 != null && d7 != null){
+    		if(d1.equals(d4) && d4.equals(d7)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}else if(d2 != null && d5 != null && d8 != null){
+    		if(d2.equals(d5) && d5.equals(d8)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}else if(d3 != null && d6 != null && d9 != null){
+    		if(d3.equals(d6) && d6.equals(d9)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}    	
+    	
+    	//Diagonal check
+    	if(d1 != null && d5 != null && d9 != null){
+    		if(d1.equals(d5) && d5.equals(d9)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	}else if(d3 != null && d5 != null && d7 != null){
+    		if(d3.equals(d5) && d5.equals(d7)){
+    			if(turn == true){
+    				winDialog();
+    			}else{
+    				loseDialog();
+    			}
+        	}
+    	} 	
+    }
+    
+    private void loseDialog(){
+    	if(multiplayer == false){
+        	Fragment dialogFragment = Fragment.newInstance("You've lost and now Santa is sad! Want to try to cheer him up?");
+    		dialogFragment.show(getFragmentManager(), "dialog");    		
+    	}else{
+        	Fragment dialogFragment = Fragment.newInstance(player2 + " wins! Want to play again?");
+    		dialogFragment.show(getFragmentManager(), "dialog");    		
+    	}
+    }
+    
+    private void winDialog(){
+    	if(multiplayer == false){
+        	Fragment dialogFragment = Fragment.newInstance("You've won and Santa is very pleased. Care to play again?");
+    		dialogFragment.show(getFragmentManager(), "dialog");
+    	}else{
+    		Fragment dialogFragment = Fragment.newInstance(player1 + " wins! Want to play again?");
+    		dialogFragment.show(getFragmentManager(), "dialog");
+    	}
+    }
+    
+    public void doPositiveClick(){
+    	Log.d("Game", "User clicks OK");
+    }
+    
+    public void doNegativeClick(){
+    	Log.d("Game", "User clicks Cancel");
+    }
+    
+    private void onePlayer(){
+    	if(turn == true){
+        	TextView t1 = (TextView) findViewById(R.id.turn);
+        	//t1.setText("It is Your turn");
+    	}else{
+    		//computer action
+    	}
 
-	}
+    }
 
-	private void twoPlayers() {
-		if (turn == true) {
-			TextView t1 = (TextView) findViewById(R.id.turn);
-			t1.setText("It is " + Player2 + " 's turn");
-		} else {
-			TextView t1 = (TextView) findViewById(R.id.turn);
-			t1.setText("It is " + Player1 + " 's turn");
-		}
-	}
-
-	private Drawable getImage2(ImageButton a) {
-		return a.getDrawable();
-	}
+    private void twoPlayers(){    	
+    	if(turn == true){
+        	TextView t1 = (TextView) findViewById(R.id.turn);
+        	t1.setText("It is "+player2+" 's turn");
+    	}else{
+        	TextView t1 = (TextView) findViewById(R.id.turn);
+        	t1.setText("It is "+player1+" 's turn");
+    	}
+    }
+    private Drawable getImage2(ImageButton a){
+    	return a.getDrawable();
+    }
 }
