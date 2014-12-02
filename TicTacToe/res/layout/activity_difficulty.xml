@@ -43,7 +43,9 @@
                 android:text="@string/btn_hard"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textStyle="italic" 
+                android:clickable="False"
+                />
 
             <ImageButton
                 android:id="@+id/btn_back"
