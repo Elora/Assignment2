@@ -2,13 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal"
-    android:background="@drawable/background">
-    	
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/TG" />
+    android:background="@drawable/background"
+    android:orientation="horizontal" >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,38 +13,36 @@
 
         <ImageButton
             android:id="@+id/ib_1"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-         	android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"
-            />
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_2"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"
-            />
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_3"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp" />
+            android:scaleType="fitXY" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,36 +53,36 @@
 
         <ImageButton
             android:id="@+id/ib_4"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_5"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_6"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:scaleType="fitXY" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,66 +93,73 @@
 
         <ImageButton
             android:id="@+id/ib_7"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp" />
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:id="@+id/ib_8"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
-        
+            android:scaleType="fitXY" />
+
         <ImageButton
             android:id="@+id/ib_9"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight=".30"
-            android:background="@android:color/white"
+            android:background="#77FFFFFF"
             android:contentDescription="@string/btn"
             android:onClick="onClick"
-            android:scaleType="fitXY"
-            android:layout_margin="5dp"/>
+            android:scaleType="fitXY" />
     </LinearLayout>
 
-    
-  <LinearLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:orientation="vertical" >
-    
-    <TextView
-        android:id="@+id/turn"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/turn" />
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp" >
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/score" />
+        <TextView
+            android:id="@+id/turn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/turn"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="onClick"
-        android:text="@string/btn_back" />
-    	
-	</LinearLayout>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/score"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menubutton"
+            android:onClick="onClick"
+            android:text="@string/btn_back"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
 </LinearLayout>

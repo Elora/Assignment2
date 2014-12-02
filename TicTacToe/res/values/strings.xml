@@ -10,10 +10,10 @@
     <string name="btn_twoplayer">Two player</string>
     <string name="btn_play">Play</string>
     <string name="btn_back">Back</string>
-    <string name="label_p1">Player 1:</string>
-    <string name="label_p2">Player 2:</string>
-    <string name="input_p1">Player 1</string>
-    <string name="input_p2">Player 2</string>
+    <string name="label_p1">Player 1: </string>
+    <string name="label_p2">Player 2: </string>
+    <string name="input_p1"> Player 1 </string>
+    <string name="input_p2"> Player 2 </string>
     <string name="btn_easy">Easy</string>
     <string name="btn_hard">Hard</string>
     <string name="hello_world">Hello world!</string>

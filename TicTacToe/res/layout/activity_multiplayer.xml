@@ -14,70 +14,84 @@
     <RelativeLayout
         android:layout_width="0dip"
         android:layout_height="fill_parent"
-        android:layout_weight="0.7" >
+        android:layout_weight="0.7"
+        android:gravity="center"
+        android:orientation="horizontal" >
 
-        <LinearLayout
+        <TableLayout
+            android:id="@+id/table1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:orientation="vertical" >
+            android:background="@drawable/whitebackground"
+            android:paddingLeft="15dp" >
 
-            <TableLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/whitebackground"
-                >
+            <TableRow>
 
-                <TableRow>
+                <TextView
+                    android:id="@+id/label_p1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_p1"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/label_p1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/label_p1" />
+                <EditText
+                    android:id="@+id/input_p1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_p1"
+                    android:textSize="20sp" />
+            </TableRow>
 
-                    <EditText
-                        android:id="@+id/input_p1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/input_p1" />
-                </TableRow>
+            <TableRow>
 
-                <TableRow>
+                <TextView
+                    android:id="@+id/label_p2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_p2"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/label_p2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/label_p2" />
+                <EditText
+                    android:id="@+id/input_p2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_p2"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
 
-                    <EditText
-                        android:id="@+id/input_p2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/input_p2" />
-                </TableRow>
-            </TableLayout>
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table1"
+            >
 
-            <Button
-                android:id="@+id/btn_play"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/menubutton"
-                android:onClick="onClick"
-                android:text="@string/btn_play"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+            <TableRow >
 
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backbutton"
-                android:onClick="onClick" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_margin="10dp"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menubutton"
+                    android:onClick="onClick"
+                    android:text="@string/btn_play"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="italic" 
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow>
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backbutton"
+                    android:onClick="onClick" />
+            </TableRow>
+        </TableLayout>
     </RelativeLayout>
 
     <RelativeLayout
