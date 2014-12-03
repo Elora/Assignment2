@@ -23,7 +23,7 @@
             android:scaleType="fitXY" />
 
         <ImageButton
-            android:id="@+id/ib_2"
+            android:id="@+id/ib_4"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -34,7 +34,7 @@
             android:scaleType="fitXY" />
 
         <ImageButton
-            android:id="@+id/ib_3"
+            android:id="@+id/ib_7"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -52,7 +52,7 @@
         android:orientation="vertical" >
 
         <ImageButton
-            android:id="@+id/ib_4"
+            android:id="@+id/ib_2"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -74,7 +74,7 @@
             android:scaleType="fitXY" />
 
         <ImageButton
-            android:id="@+id/ib_6"
+            android:id="@+id/ib_8"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -92,7 +92,7 @@
         android:orientation="vertical" >
 
         <ImageButton
-            android:id="@+id/ib_7"
+            android:id="@+id/ib_3"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
@@ -103,7 +103,7 @@
             android:scaleType="fitXY" />
 
         <ImageButton
-            android:id="@+id/ib_8"
+            android:id="@+id/ib_6"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
